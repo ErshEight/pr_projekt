@@ -8,6 +8,7 @@ header {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 header img {
@@ -19,12 +20,13 @@ header img {
   display: flex;
   align-items: center;
   padding: 10px;
+  margin: 0 auto;
 }
 
 .search-bar input {
   font-size: 15px;
   width: 250px;
-  height: 80%;
+  height: 30px;
   margin-left: 36px;
   border-radius: 8px;
   border-color: #000000;
@@ -86,16 +88,33 @@ p {
   margin-right: 5px;
 }
 
-.login-button {
-  float: right;
-  margin-top: 10px;
+.login-button,
+.register-button,
+.add-button {
+  display: flex;
+  align-items: center;
 }
 
-.login-button button {
-  padding: 5px 10px;
+.login-button button,
+.register-button button,
+.add-button button {
+  padding: 6px 12px;
   border-radius: 8px;
   border-color: #000000;
   background-color: darkgray;
   color: #333333;
   cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.add-button {
+  margin-left: 30px;
 }
