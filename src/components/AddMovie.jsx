@@ -9,6 +9,8 @@ const AddMovie = () => {
     title: '',
     image: '',
     content: '',
+    genre: '',
+    rate: '',
   });
 
   const handleInputChange = (event) => {
@@ -27,7 +29,7 @@ const AddMovie = () => {
   const handleAdd = async (event) => {
     event.preventDefault();
 
-    if (!formData.title || !formData.image || !formData.content) {
+    if (!formData.title || !formData.image || !formData.content || !formData.genre || !formData.rate) {
       return;
     }
 
@@ -36,6 +38,8 @@ const AddMovie = () => {
         title: formData.title,
         image: formData.image,
         content: formData.content,
+        genre: formData.genre,
+        rate: formData.rate,
       })
       .then(() => {
         handleChangeRoute();
@@ -47,6 +51,8 @@ const AddMovie = () => {
           title: '',
           image: '',
           content: '',
+          genre: '',
+          rate: '',
         });
       });
   };
@@ -74,6 +80,26 @@ const AddMovie = () => {
                 id="image"
                 name="image"
                 value={formData.image}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Gatunek
+              <input
+                type="text"
+                id="genre"
+                name="genre"
+                value={formData.genre}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Ocena
+              <input
+                type="text"
+                id="rate"
+                name="rate"
+                value={formData.rate}
                 onChange={handleInputChange}
               />
             </label>
