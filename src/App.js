@@ -11,18 +11,18 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 function App() {
-  const movies = [
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-    { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
-  ];
+  // const movies = [
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  //   { title: 'Film', description: 'Przykładowy opis', rating: 0, image: 'poster-placeholder.png' },
+  // ];
 
   return (
     <Router>
@@ -30,11 +30,12 @@ function App() {
         <HeaderComponent />
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home movies={movies} />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/details" element={<Details />} />
             <Route path="/add" element={<AddMovie />} />
             <Route path="/signin" element={<Login />} />
             <Route path="/signup" element={<Register />} />
+            
           </Routes>
         </div>
         <FooterComponent />

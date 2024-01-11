@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieComponent = (props) => {
-  const { title, description, rating, image } = props;
+  const { id, title, rate, image } = props;
 
   return (
-    <Link to="/details">
+    <Link to={`/details/${encodeURIComponent(title)}/${id}`}>
       <div className='movie'>
         <img src={image} alt={title} />
         <h3>{title}</h3>
-        <p>{description}</p>
         <div className='rating'>
           <img src='star.png' alt='Ocena' />
-          <span>{rating.toFixed(1)}</span>
+          <span>{rate.toFixed(1)}</span>
         </div>
       </div>
     </Link>
   );
 };
+
 export default MovieComponent;

@@ -1,51 +1,88 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
+import axios from 'axios';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    login: '',
-    nazwa: '',
+    name: '',
     email: '',
-    haslo: '',
+    password: '',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  const handleInputChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Registration data:', formData);
+  const handleChangeRoute = () => {
+    navigate('/signin');
+    window.location.reload();
+  };
+
+  const handleRegistration = async (event) => {
+    event.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.password) {
+      return;
+    }
+
+    axios
+      .post('https://at.usermd.net/api/user/create', {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      })
+      .then((response) => {
+        handleChangeRoute();
+      })
+      .catch((error) => {
+        console.log(error);
+
+        setFormData({
+          name: '',
+          email: '',
+          password: '',
+        });
+      });
   };
 
   return (
     <div className="registration-container">
       <div className="registration-box">
         <h2>Rejestracja</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Login:
-            <input type="text" name="login" value={formData.login} onChange={handleChange} required />
-          </label>
-          <br />
+        <form>
           <label>
             Nazwa:
-            <input type="text" name="nazwa" value={formData.nazwa} onChange={handleChange} required />
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange} required />
           </label>
           <br />
           <label>
             Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange} required />
           </label>
           <br />
           <label>
             Hasło:
-            <input type="password" name="haslo" value={formData.haslo} onChange={handleChange} required />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange} required />
           </label>
           <br />
-          <button type="submit">Zarejestruj się</button>
+          <button type="submit" onClick={handleRegistration}>Zarejestruj się</button>
         </form>
         <p className="have-account-text">
           Posiadasz już konto? <Link to="/signin">Zaloguj się tutaj!</Link>

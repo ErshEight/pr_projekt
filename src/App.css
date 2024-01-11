@@ -1,5 +1,6 @@
 body {
   background-color: #121212;
+  margin: 0;
 }
 
 header {
@@ -19,39 +20,46 @@ header img {
 .search-bar {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin: 0 auto;
 }
 
 .search-bar input {
   font-size: 15px;
   width: 250px;
   height: 30px;
-  margin-left: 36px;
   border-radius: 8px;
   border-color: #000000;
   background-color: darkgray;
+  margin-left: 10px;
+}
+
+.search-bar-container {
+  flex-grow: 1;
+  margin: 0 20px;
 }
 
 main {
-  padding: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #520e0e;
   color: #ffffff;
   padding: 10px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 .movies-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   background-color: #121212;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 h3 {
@@ -65,17 +73,21 @@ p {
 }
 
 .movie {
-  margin: 10px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  margin-bottom: 25px;
+  margin-left: 30px;
 }
 
 .movie img {
-  max-width: 45%;
-  height: auto;
+  max-width: 250px;
+  height: 360px;
 }
 
 .rating {
-  margin-top: 5px;
+  margin-top: -5px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,11 +100,11 @@ p {
   margin-right: 5px;
 }
 
-.login-button,
-.register-button,
-.add-button {
+.buttons-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .login-button button,
@@ -106,13 +118,6 @@ p {
   cursor: pointer;
   font-size: 18px;
   margin-left: 10px;
-}
-
-.buttons-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 10px;
 }
 
 .add-button {
