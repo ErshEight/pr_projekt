@@ -8,7 +8,7 @@ const MovieComponent = (props) => {
     <Link to={`/details/${encodeURIComponent(title)}/${id}`}>
       <div className='movie'>
         <img src={image} alt={title} />
-        <h3>{title}</h3>
+        <h3 className='movie-title'>{title}</h3>
         <div className='rating'>
           <img src='star.png' alt='Ocena' />
           <span>{rate.toFixed(1)}</span>
