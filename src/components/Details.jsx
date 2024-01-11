@@ -39,22 +39,6 @@ const Details = () => {
       <div className="detail-second-column">
         <h2>{movieDetails.title}</h2>
         <p>{movieDetails.content}</p>
-        <table>
-          <tbody>
-            <tr>
-              <td className="td">Aktorzy:</td>
-              <td>{movieDetails.mainActors}</td>
-            </tr>
-            <tr>
-              <td>Producent</td>
-              <td>{movieDetails.producer}</td>
-            </tr>
-            <tr>
-              <td>Gatunek</td>
-              <td>{movieDetails.genre}</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   );
