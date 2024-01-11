@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useMovies } from "./MoviesContext";
 import axios from 'axios';
 import '../App.css';
+import './Details.css';
 
 const Details = () => {
   const { id } = useParams();
@@ -31,11 +32,11 @@ const Details = () => {
   }
 
   return (
-    <div className="main-box movie-box">
-      <div className="movie-box-first-column">
+    <div className="details-box">
+      <div className="detail-first-column">
         <img src={movieDetails.image} alt={movieDetails.title} />
       </div>
-      <div className="movie-box-second-column">
+      <div className="detail-second-column">
         <h2>{movieDetails.title}</h2>
         <p>{movieDetails.content}</p>
         <table>

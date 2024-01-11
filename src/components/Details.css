@@ -1,0 +1,17 @@
+.details-box {
+    gap: 50px;
+    align-items: center;
+}
+
+.detail-first-column {
+    min-width: 40%;
+}
+
+.detail-second-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+    text-align: left;
+    padding-top: 50px;
+    row-gap: 20px;
+}
