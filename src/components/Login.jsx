@@ -62,12 +62,22 @@ const Login = () => {
         <form>
           <label>
             Login:
-            <input type="text" name="login" value={formData.login} onChange={handleInputChange} required />
+            <input 
+            type="text" 
+            name="login" 
+            value={formData.login} 
+            onChange={handleInputChange} 
+            required />
           </label>
           <br />
           <label>
             Hasło:
-            <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
+            <input 
+            type="password" 
+            name="password" 
+            value={formData.password} 
+            onChange={handleInputChange} 
+            required />
           </label>
           <br />
           <button type="submit" onClick={handleLogin}>Zaloguj się</button>
