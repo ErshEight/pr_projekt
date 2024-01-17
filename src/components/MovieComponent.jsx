@@ -5,7 +5,7 @@ const MovieComponent = (props) => {
   const { id, title, rate, image } = props;
 
   return (
-    <Link to={`/details/${encodeURIComponent(title)}/${id}`}>
+    <Link to={`/details/${encodeURIComponent(title)}/${id}`} style={{ textDecoration: 'none' }}>
       <div className='movie'>
         <img src={image} alt={title} />
         <h3 className='movie-title'>{title}</h3>

@@ -11,6 +11,7 @@ const AddMovie = () => {
     content: '',
     genre: '',
     rate: '',
+    productionYear: '',
   });
 
   const handleInputChange = (event) => {
@@ -40,6 +41,7 @@ const AddMovie = () => {
         content: formData.content,
         genre: formData.genre,
         rate: formData.rate,
+        productionYear: formData.productionYear
       })
       .then(() => {
         handleChangeRoute();
@@ -53,6 +55,7 @@ const AddMovie = () => {
           content: '',
           genre: '',
           rate: '',
+          productionYear: '',
         });
       });
   };
@@ -100,6 +103,16 @@ const AddMovie = () => {
                 id="rate"
                 name="rate"
                 value={formData.rate}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Rok wydania
+              <input
+                type="text"
+                id="productionYear"
+                name="productionYear"
+                value={formData.productionYear}
                 onChange={handleInputChange}
               />
             </label>

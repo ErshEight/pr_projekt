@@ -17,26 +17,6 @@ header img {
   height: auto;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input {
-  font-size: 15px;
-  width: 250px;
-  height: 30px;
-  border-radius: 8px;
-  border-color: #000000;
-  background-color: darkgray;
-  margin-left: 10px;
-}
-
-.search-bar-container {
-  flex-grow: 1;
-  margin: 0 20px;
-}
-
 main {
   padding-left: 3%;
   padding-right: 3%;
@@ -55,11 +35,13 @@ footer {
 
 .movies-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   background-color: #121212;
   margin-top: 20px;
   margin-bottom: 70px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 h3 {
@@ -80,15 +62,17 @@ p {
 }
 
 .movie img {
-  max-width: 250px;
+  max-width: 230px;
   height: 360px;
 }
-
-.movie-title {
+ 
+.movie h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 230px;
 }
+
 
 .rating {
   margin-top: -5px;

@@ -3,15 +3,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 25px;
     margin-left: 76vh;
     margin-right: 50vh;
+    margin-bottom: 10vh;
     background: linear-gradient(45deg, #171717, #7f7f7f);
     padding: 1%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    height: 70vh;
+    height: 78vh;
     width: 45vh;
   }
   
