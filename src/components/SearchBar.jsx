@@ -15,29 +15,29 @@ const SearchBar = ({ onSearch }) => {
         }
     }, [location.pathname]);
 
-    const fetchData = async () => {
-        try {
-            if (searchTerm) {
-                setIsSearching(true);
-                const response = await axios.get(`https://at.usermd.net/api/movies`);
-                const filteredMovies = response.data.filter((movie) =>
-                    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-                );
-                onSearch(filteredMovies);
-            } else {
-                onSearch([]);
-            }
-        } catch (error) {
-            console.error('Error fetching movies:', error);
-        } finally {
-            setIsSearching(false);
-        }
-    };
-
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (searchTerm) {
+                    setIsSearching(true);
+                    const response = await axios.get(`https://at.usermd.net/api/movies`);
+                    const filteredMovies = response.data.filter((movie) =>
+                        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                    onSearch(filteredMovies);
+                } else {
+                    onSearch([]);
+                }
+            } catch (error) {
+                console.error('Error fetching movies:', error);
+            } finally {
+                setIsSearching(false);
+            }
+        };
+    
         fetchData();
     }, [searchTerm, onSearch]);
-
+    
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
@@ -48,6 +48,7 @@ const SearchBar = ({ onSearch }) => {
                 <input 
                 type='text' 
                 placeholder='Szukaj filmów'
+                value={searchTerm}
                 onChange={handleSearchChange} />
                 {isSearching}
             </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useMovies } from "../components/MoviesContext";
 import axios from 'axios';
 import '../App.css';
 import './Details.css';
@@ -53,21 +52,23 @@ const Details = () => {
   };
 
   return (
-    <div className="details-box">
-      <div className="detail-first-column">
-        <img src={movieDetails.image} alt={movieDetails.title} />
-      </div>
-      <div className="detail-second-column">
-        <h2>{movieDetails.title}</h2>
-        <p>Gatunek: {movieDetails.genre}</p>
-        <p>Rok wydania: {movieDetails.productionYear}</p>
-        <p>Ocena: {movieDetails.rate}</p>
-        <p>{movieDetails.content}</p>
-        {isLoggedIn && (
-          <button className='delete-button' onClick={handleDelete}>
-            Usuń film
-          </button>
-        )}
+    <div className='container'>
+      <div className="details-box">
+        <div className="detail-first-column">
+          <img src={movieDetails.image} alt={movieDetails.title} />
+        </div>
+        <div className="detail-second-column">
+          <h2>{movieDetails.title}</h2>
+          <p>Gatunek: {movieDetails.genre}</p>
+          <p>Rok wydania: {movieDetails.productionYear}</p>
+          <p>Ocena: {movieDetails.rate.toFixed(1)}</p>
+          <p>{movieDetails.content}</p>
+          {isLoggedIn && (
+            <button className='delete-button' onClick={handleDelete}>
+              Usuń film
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

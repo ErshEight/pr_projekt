@@ -8,6 +8,14 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 .detail-first-column {
@@ -33,7 +41,6 @@
 
 .detail-second-column p {
     font-size: 16px;
-    margin-right: 500px;
 }
 
 .delete-button {
@@ -44,5 +51,5 @@
     color: #333333;
     cursor: pointer;
     font-size: 18px;
-    margin-top: 13.5%;
+    margin-top: 10.5%;
 }

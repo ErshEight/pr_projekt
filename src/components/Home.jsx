@@ -15,10 +15,23 @@ const Home = () => {
       });
   }, []);
 
+  const refreshAll = () => {
+    axios.get('https://at.usermd.net/api/movies')
+      .then(response => {
+        setMovies(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching movies:', error);
+      });
+  }
+
   return (
     <div className="movies-container">
       {movies.map((movie, index) => (
-        <MovieComponent key={index} {...movie} />
+        <MovieComponent
+          key={index}
+          {...movie}
+          refreshAll={refreshAll} />
       ))}
     </div>
   );

@@ -13,18 +13,19 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     height: 78vh;
-    width: 45vh;
+    width: 48vh;
   }
   
   .add-movie-container {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 30px;
+    margin-left: 10px;
   }
 
   .add-movie-container h2 {
     color: #e5e5e5;
     margin-top: 30px;
-    margin-left: 15px;
+    margin-left: 25px;
   }
   
   .add-movie-form {
