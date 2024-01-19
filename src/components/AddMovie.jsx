@@ -72,6 +72,7 @@ const AddMovie = () => {
                 type="text"
                 id="title"
                 name="title"
+                placeholder="Tytuł"
                 value={formData.title}
                 onChange={handleInputChange}
               />
@@ -82,6 +83,7 @@ const AddMovie = () => {
                 type="text"
                 id="image"
                 name="image"
+                placeholder="Link do zdjęcia"
                 value={formData.image}
                 onChange={handleInputChange}
               />
@@ -92,6 +94,7 @@ const AddMovie = () => {
                 type="text"
                 id="genre"
                 name="genre"
+                placeholder="Gatunek"
                 value={formData.genre}
                 onChange={handleInputChange}
               />
@@ -102,6 +105,7 @@ const AddMovie = () => {
                 type="text"
                 id="rate"
                 name="rate"
+                placeholder="Ocena"
                 value={formData.rate}
                 onChange={handleInputChange}
               />
@@ -112,6 +116,7 @@ const AddMovie = () => {
                 type="text"
                 id="productionYear"
                 name="productionYear"
+                placeholder="Rok wydania"
                 value={formData.productionYear}
                 onChange={handleInputChange}
               />
@@ -122,6 +127,7 @@ const AddMovie = () => {
                 id="content"
                 name="content"
                 rows="10"
+                placeholder="Wprowadź opis..."
                 value={formData.content}
                 onChange={handleInputChange}
               />
